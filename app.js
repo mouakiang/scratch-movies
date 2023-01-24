@@ -10,7 +10,7 @@ window.addEventListener('load', async () => {
     const allMovies = await getMovies();
 
     movieList = allMovies;
-    console.log(movieList);
+
     for (let movie of movieList) {
         const movieEl = renderMovieImg(movie);
 

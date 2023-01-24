@@ -8,6 +8,8 @@ export function renderMovieImg(movie) {
 
     p.textContent = movie.name;
 
+    img.src = `./assets/${movie.name}.jpg`;
+
     div.append(p, img);
 
     a.append(div);
