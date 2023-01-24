@@ -5,5 +5,7 @@ const SUPABASE_KEY =
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function getMovies() {
-    const { data, error } = await client.from('');
+    const { data, error } = await client.from('movies').select('*, movies_categories (category)');
+
+    return data;
 }
