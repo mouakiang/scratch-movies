@@ -1,11 +1,18 @@
 /* Imports */
-
+import {getMovies}
 /* Get DOM Elements */
-
+const movieContainer = document.getElementById('movie-container');
 /* State */
-
+let movieList = [];
 /* Events */
+window.addEventListener('load', async () => {
+    const allMovies = await getMovies();
 
-/* Display Functions */
+    movieList = allMovies;
 
-// (don't forget to call any display functions you want to run on page load!)
+    for (let movie of movieList) {
+        const movieEl = renderMovieImg();
+
+        movieContainer.append(movieEl);
+    }
+});
