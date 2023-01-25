@@ -13,7 +13,7 @@ export async function getMovies() {
 export async function getMovie(id) {
     const { data, error } = await client
         .from('movies')
-        .select('*, movies_categories (category')
+        .select('*, movies_categories (category)')
         .eq('id', id)
         .single();
 

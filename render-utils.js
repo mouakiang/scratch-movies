@@ -9,6 +9,7 @@ export function renderMovieImg(movie) {
     p.textContent = movie.name;
 
     img.src = `./assets/${movie.name}.jpg`;
+    a.href = `./detail/?id=${movie.id}`;
 
     div.append(p, img);
 
@@ -27,7 +28,7 @@ export function renderMovieDetails(movie) {
     const releaseDateEl = document.createElement('p');
     const ratingEl = document.createElement('p');
 
-    img.src = `./assets/${movie.name}.jpg`;
+    img.src = `../assets/${movie.name}.jpg`;
     descriptionEl.textContent = movie.description;
     nameEl.textContent = movie.name;
     categoryEl.textContent = movie.category;
@@ -37,7 +38,7 @@ export function renderMovieDetails(movie) {
 
     div.classList.add('movie-detail');
     img.classList.add('img');
-    descriptionEl.add('description');
+    descriptionEl.classList.add('description');
     nameEl.classList.add('name');
     categoryEl.classList.add('category');
     directorEl.classList.add('director');
