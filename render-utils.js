@@ -16,3 +16,35 @@ export function renderMovieImg(movie) {
 
     return a;
 }
+
+export function renderMovieDetails(movie) {
+    const div = document.createElement('div');
+    const img = document.createElement('img');
+    const descriptionEl = document.createElement('p');
+    const nameEl = document.createElement('p');
+    const categoryEl = document.createElement('p');
+    const directorEl = document.createElement('p');
+    const releaseDateEl = document.createElement('p');
+    const ratingEl = document.createElement('p');
+
+    img.src = `./assets/${movie.name}.jpg`;
+    descriptionEl.textContent = movie.description;
+    nameEl.textContent = movie.name;
+    categoryEl.textContent = movie.category;
+    directorEl.textContent = movie.director;
+    releaseDateEl.textContent = movie.release;
+    ratingEl.textContent = movie.rating;
+
+    div.classList.add('movie-detail');
+    img.classList.add('img');
+    descriptionEl.add('description');
+    nameEl.classList.add('name');
+    categoryEl.classList.add('category');
+    directorEl.classList.add('director');
+    releaseDateEl.classList.add('release-date');
+    ratingEl.classList.add('rating');
+
+    div.append(img, descriptionEl, nameEl, categoryEl, directorEl, releaseDateEl, ratingEl);
+
+    return div;
+}

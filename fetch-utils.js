@@ -9,3 +9,13 @@ export async function getMovies() {
 
     return data;
 }
+
+export async function getMovie(id) {
+    const { data, error } = await client
+        .from('movies')
+        .select('*, movies_categories (category')
+        .eq('id', id)
+        .single();
+
+    return data;
+}
